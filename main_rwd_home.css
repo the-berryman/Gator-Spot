@@ -1,0 +1,431 @@
+/* the styles for the elements */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 95%;                             /* fixed width was 900 */
+    max-width: 1024px;                      /* add max-width */
+    margin: 0 auto;
+    padding: 0;
+    border: 3px solid blue;            /* 4 / 16 */
+    box-shadow: 0 .625em 1.25em .625em;     /* 10 / 16; 20 / 16 */
+    
+}
+h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    font-weight: bold;
+}
+a:hover, a:focus { 
+    color: black;
+}
+
+/* the styles for the header */
+header {
+    background-image: -webkit-linear-gradient(to bottom, blue 0%, orangered 100%);
+    background-image: -moz-linear-gradient(to bottom, blue 0%, orangered 10%);
+    background-image: -o-linear-gradient(to bottom, blue 0%, orangered 10%);
+    background-image: linear-gradient(to bottom, blue 0%, orangered 100%);    
+    padding: 15px 3.3333%;              /* 30 / 900 * 100 */
+                                                         
+} 
+header img { 
+    float: left; 
+            
+} 
+header h2 {
+    font-size: 400%;
+    font-style: bold;
+    color: orangered;
+    text-indent: 5%;                        /* 45 / 900 *100 */
+    text-shadow: 3px 3px 3px blue;
+    margin-top: 0.7em;
+    margin-bottom: 0.2em;
+}
+
+
+/*animation for the moving gator on homepage */
+
+header img {
+    
+    animation: pulse 3s ease-in-out 2s 4 alternate;
+    
+}
+ 
+@keyframes pulse {
+    from {
+
+        transform: scale(1.0,1.0);
+    }
+    
+    to {
+        
+        transform: scale(1.15,1.15);
+
+    }
+
+}
+
+header h3 {
+    font-size: 125%;
+    text-indent: 5%;
+    padding-bottom: .75em;    
+    font-style: italic;
+    color: white;   
+}
+
+/* the styles for the navigation menu */
+#nav_menu {
+    clear: left;
+    
+}
+#nav_menu ul {
+    list-style: none;
+    position: relative;
+}
+#nav_menu ul li {
+    float: left;
+    width: 20%;                             /* 5 items each 20% of menu */
+}
+#nav_menu ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+}
+#nav_menu ul ul li {
+    float: none;
+}
+#nav_menu ul li:hover > ul {
+    display: block;
+}
+#nav_menu > ul::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+#nav_menu ul {
+    margin: 0;
+    padding: 0;
+}
+#nav_menu ul li a {
+    text-align: center;
+    display: block;
+    padding: .7em 0;
+
+    /*
+    background-image: linear-gradient(to bottom, blue 0%, white 120%);   */
+    background-color: blue;
+    text-shadow: lightblue;
+    color: white;
+}
+#nav_menu ul li a.current {
+    color: orange;
+}
+#nav_menu ul li a:hover, #nav_menu ul li a:focus {
+    background-color: orangered;
+}
+#nav_menu ul li:hover ul {
+    width: 100%;
+    
+
+}
+
+/* the styles for the section */
+section {
+    width: 62.7777%;                        /* 565 / 900 X 100 */
+    float: right;
+    padding: 1.5625em 3.3333%;              /* 20 / 16; 30 / 900 x 100 */
+}
+section h1 {
+    font-size: 150%;
+    margin-bottom: .3em;
+}
+section h2 {
+    font-size: 130%;
+    font-style: italic;
+    margin-bottom: .5em;
+}
+section h3 {
+    color: orangered;
+    font-style: italic;
+    font-size: 110%;
+    margin-bottom: .4em;
+}
+section p {
+    font-size: 100%;
+    margin-bottom: .7em;
+}
+
+.homepic {
+    margin-top: 1.4em;
+    margin-left: 3em;
+    margin-bottom: 1.4em;
+}
+
+.gavin {
+    
+    float: right;
+    margin: 1em 1em 1em 1em;
+
+}
+
+.practice {
+
+    float: right;
+    margin: 1em 1em 1em 1em;
+}
+
+fieldset {
+    margin-bottom: .5em;
+    padding-bottom: .5em;
+    padding-top: .5em;
+    padding-right: 1em;
+    padding-left: 1em;
+}
+legend {
+    color: black;
+    font-weight: bold;
+    font-size: 85%;
+    margin-bottom: .5em;
+}
+label {
+    float: left;
+    width: 12em;
+    text-align: right;
+}
+
+
+label, input, select {
+    font-size: 90%;
+}
+input, select {
+    width: 15em;
+    margin-left: .5em;
+    margin-bottom: .5em;
+}
+
+input.radio {
+    width: 1em;
+    float: none;
+    text-align: left;
+    padding-left: 2em;
+}
+
+label.radio {
+    width: 5em;
+    float: none;
+    padding-right: 2em;
+
+}
+
+
+textarea {
+    height: 5em;
+    width: 95%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input {
+    border: 1px solid black;
+}
+
+input:required, input[required] {
+    border: 1px solid black;
+}
+
+input:valid {
+    border: 1px solid black;
+}
+
+input:invalid {
+    
+    border: 1px solid red;
+    box-shadow: .1em .1em .1em .1em; 
+}
+
+br {
+    clear: both;
+}
+
+#expiration_month {
+    width: 8em;
+}
+
+#expiration_year {
+    width: 5em
+}
+
+#buttons input {
+    width: 10em;
+}
+
+
+table {
+    border: 2px solid black;
+    margin: auto;
+}
+
+thead {
+    margin-bottom: 15px;
+}
+
+.center {
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+tfoot {
+    margin-top: 15px;
+    margin-left: 1.5em;
+    font-size: 100%;
+}
+
+tr {
+    padding-bottom: 7px;
+    font-size: 80%;
+}
+
+th {
+    width: 250px;
+    text-align: left;
+    color: black;
+    font-size: 120%;
+    padding-bottom: 7px;
+    padding-right: 15px;
+}
+
+td {
+  width: 250px;
+  padding-bottom: 7px;
+  }
+
+
+/* the styles for the sidebar */
+aside {
+    float: left;
+    width: 27.2222%;                       
+    padding: 1.5625em 0 0 3.3333%;        
+}
+aside h2 {
+    font-size: 125%;
+    color: orangered;
+    margin-bottom: .4em;                  
+}
+aside ul {
+    line-height: 1.5;    
+    margin: 0;
+    padding-left: 1em;                                                   
+}
+aside a:link, aside a:visited { 
+    color: blue;
+}
+aside a:hover, aside a:focus {
+    color: orangered;
+}
+
+
+/* the styles for the footer */
+footer { 
+    clear: both;
+    padding: .9375em 3.3333%;             
+    /*background-image: linear-gradient(to bottom, white 0%, orangered 120%); Gradient looks bad here  */
+    background-color: orangered;
+} 
+footer p {
+    text-align: center;
+    font-size: 70%;
+    color: white;
+}
+#mobile_menu {
+    display: none;
+}
+
+/* media queries */
+@media only screen and (max-width: 900px) {
+    body {
+        font-size: 90%;
+        box-shadow: none;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    #nav_menu {
+        display: none;
+    }
+    
+    /* change background and decrease padding */
+    .slicknav_menu {
+        background: blue !important;
+        padding: 3px !important;
+    }
+
+    #mobile_menu {
+        display: block;
+    }
+    #mobile_menu ul {
+        background-color: orangered;
+    }
+    #mobile_menu a {
+        background-color: orangered;
+    }
+    #mobile_menu a:hover, #mobile_menu a:focus {
+        color: orange;
+    }
+    header h2 {
+        font-size: 200%;
+    }
+
+    
+    header img {
+    
+    transform: scale(0.7,0.7);
+
+    }
+
+    .homepic {
+
+    display: none;
+
+    }
+
+    .gavin {
+    transform: scale(0.8,0.8);
+    float: right;
+    margin: .1em .1em .1em .1em;
+
+    }
+
+    .practice {
+
+   display: none;
+   
+    }
+
+
+    section {
+        float: none;
+        width: 93.3334%;
+    }
+
+    aside {
+        float: none;        
+        width: 93.3334%;
+        padding-top: 0;
+        padding-bottom: 1.5625em;
+    }
+}
+
+@media only screen and (max-width: 479px) {
+    header h2 {
+        font-size: 170%;
+    }
+    header h3 {
+        font-size: 100%;
+    }
+    section p {
+        font-size: 95%;
+    }
+}
+
+}

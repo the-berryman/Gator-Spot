@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+
+	Final Project "Gator Spot"
+	By Gavin Berryman
+	Last edited: August 4th, 2019
+	CGS-1821 Summer 2019
+
+-->
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Gator Spot!</title>
+	<link rel="shortcut icon" href="../images/favicon.jpg">
+	<link rel="stylesheet" href="../styles/normalize.css">
+	<link rel="stylesheet" href="../styles/main_rwd_home.css">
+	<link rel="stylesheet" href="../styles/slicknav.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="../js/jquery.slicknav.min.js"></script>
+	<script type="text/javascript">
+    	$(document).ready(function(){
+			$('#nav_menu').slicknav({prependTo:"#mobile_menu"});
+    	});
+    </script>
+</head>
+
+<body>
+	<header>
+		<a href="index.html"><img src="../images/nav_logo.png" alt="Gators Image" ></a>
+		<h2>Gator Spot</h2>
+		<h3>In depth detail on the Florida Gators football team</h3>
+	</header>  
+	<nav id="mobile_menu"></nav>
+	<nav id="nav_menu">
+  	<ul>
+    	<li><a href="../index.html">Home</a></li>
+    	<li><a href="../roster/index.html">Roster</a>
+    		<ul>
+    			<li><a href="../roster/index.html">Coaches</a></li>
+    			<li><a href="../roster/offense.html">Offense</a></li>
+    			<li><a href="../roster/defense.html">Defense</a></li>
+    			
+    		</ul>
+    	<li><a href="../opponents/index.html">Opponents</a></li>
+    	<li><a href="../recruiting/index.html">Recruiting</a></li>
+    	
+    	</li>
+    	<li><a href="../about/index.html">About Us</a></li>
+	</ul>
+    </nav>
+	<main>
+	<section>
+        <h1>SR Calc</h1>
+				<form>
+			
+					MMR:<br>
+						<input type="text" id="mmr"><br>
+						<br>
+					
+					SR:<br>
+						<input type="text" id="sr"><br>
+						<br>
+					
+					
+					Game 1 Outcome:<br>
+						<input type="text" id="game1"><br>
+					Game 1 multiplier:<br>
+						<input type="text" id="game1m"><br>
+						<br>
+						
+						<br>
+						<br>
+					Game 2 Outcome:<br>
+						<input type="text" id="game2"><br>
+					Game 2 multiplier:<br>
+						<input type="text" id="game2m"><br>
+						<br>
+						
+						<br>
+						<br>
+					Game 3 Outcome:<br>
+						<input type="text" id="game3"><br>
+					Game 3 multiplier:<br>
+						<input type="text" id="game3m"><br>
+						<br>
+						
+						<br>
+						<br>
+					Game 4 Outcome:<br>
+						<input type="text" id="game4"><br>
+					Game 4 multiplier:<br>
+						<input type="text" id="game4m"><br>
+						<br>
+						
+						<br>
+						<br>
+					Game 5 Outcome:<br>
+						<input type="text" id="game5"><br>
+					Game 5 multiplier:<br>
+						<input type="text" id="game5m"><br>
+						<br>
+						
+						<br>
+						<br>
+					Game 6 Outcome:<br>
+						<input type="text" id="game6"><br>
+					Game 6 multiplier:<br>
+						<input type="text" id="game6m"><br>
+						<br>
+						
+						<br>
+						<br>
+					Game 7 Outcome:<br>
+						<input type="text" id="game7"><br>
+					Game 7 multiplier:<br>
+						<input type="text" id="game7m"><br>
+						<br>
+						
+						<br>
+						<br>
+					Game 8 Outcome:<br>
+						<input type="text" id="game8"><br>
+					Game 8 multiplier:<br>
+						<input type="text" id="game8m"><br>
+						<br>
+					
+						<br>
+						<br>
+					Game 9 Outcome:<br>
+						<input type="text" id="game9"><br>
+					Game 9 multiplier:<br>
+						<input type="text" id="game9m"><br>
+						<br>
+						
+						<br>
+						<br>
+					Game 10 outcome:<br>
+						<input type="text" id="game10"><br>
+					Game 10 multiplier:<br>
+						<input type="text" id="game10m"><br>
+						<br>
+						
+						<br>
+						<br>
+						<input type="button" name="Go" value="Calculate" onclick="calcSR()"></button>
+				</form>
+		
+			<script type="text/javascript"> 
+		
+				function calcSR() { 
+				    startSR = document.getElementById('sr').value;
+					startMMR = document.getElementById('mmr').value;
+					game1 = document.getElementById('game1').value;
+					game2 = document.getElementById('game2').value;
+					game3 = document.getElementById('game3').value;
+					game4 = document.getElementById('game4').value;
+					game5 = document.getElementById('game5').value;
+					game6 = document.getElementById('game6').value;
+					game7 = document.getElementById('game7').value;
+					game8 = document.getElementById('game8').value;
+					game9 = document.getElementById('game9').value;
+					game10 = document.getElementById('game10').value;
+					
+					game1m = document.getElementById('game1m').value;
+					game2m = document.getElementById('game2m').value;
+					game3m = document.getElementById('game3m').value;
+					game4m = document.getElementById('game4m').value;
+					game5m = document.getElementById('game5m').value;
+					game6m = document.getElementById('game6m').value;
+					game7m = document.getElementById('game7m').value;
+					game8m = document.getElementById('game8m').value;
+					game9m = document.getElementById('game9m').value;
+					game10m = document.getElementById('game10m').value;
+					
+					let outcome1 = "";
+					let outcome2 = "";
+					let outcome3 = "";
+					let outcome4 = "";
+					let outcome5 = "";
+					let outcome6 = "";
+					let outcome7 = "";
+					let outcome8 = "";
+					let outcome9 = "";
+					let outcome10 = "";
+					
+					/*
+					
+					This section is for players who havent ever placed in comp before
+					
+					
+					var game1adj = -3.85 * 1 + 99.34;
+					var game2adj = -3.85 * 2 + 99.34;
+					var game3adj = -3.85 * 3 + 99.34;
+					var game4adj = -3.85 * 4 + 99.34;
+					var game5adj = -3.85 * 5 + 99.34;
+					var game6adj = -3.85 * 6 + 99.34;
+					var game7adj = -3.85 * 7 + 99.34;
+					var game8adj = -3.85 * 8 + 99.34;
+					var game9adj = -3.85 * 9 + 99.34;
+					var game10adj = -3.85 * 10 + 99.34;	
+					*/
+					
+					
+					
+					
+					
+					/* 
+					
+					This section is for players who are established at the comp level
+					
+					*/
+					var game1adj = -3.85 * 20 + 99.34;
+					var game2adj = -3.85 * 20 + 99.34;
+					var game3adj = -3.85 * 20 + 99.34;
+					var game4adj = -3.85 * 20 + 99.34;
+					var game5adj = -3.85 * 20 + 99.34;
+					var game6adj = -3.85 * 20 + 99.34;
+					var game7adj = -3.85 * 20 + 99.34;
+					var game8adj = -3.85 * 20 + 99.34;
+					var game9adj = -3.85 * 20 + 99.34;
+					var game10adj = -3.85 * 20 + 99.34;
+					
+					
+					
+					
+					let totalSRadj = 0;
+					let totalMMRadj = startMMR * 1;
+					let startingSR = startSR * 1;
+					
+					
+				
+					
+					let game1x = (game1m * 0.167);
+					let game2x = (game2m * 0.167);
+					let game3x = (game3m * 0.167);
+					let game4x = (game4m * 0.167);
+					let game5x = (game5m * 0.167);
+					let game6x = (game6m * 0.167);
+					let game7x = (game7m * 0.167);
+					let game8x = (game8m * 0.167);
+					let game9x = (game9m * 0.167);
+					let game10x = (game10m * 0.167);
+					
+					let game1b = (game1adj * game1x);
+					let game2b = (game2adj * game2x);
+					let game3b = (game3adj * game3x);
+					let game4b = (game4adj * game4x);
+					let game5b = (game5adj * game5x);
+					let game6b = (game6adj * game6x);
+					let game7b = (game7adj * game7x);
+					let game8b = (game8adj * game8x);
+					let game9b = (game9adj * game9x);
+					let game10b = (game10adj * game10x);
+					
+					
+				
+					/*
+					var startingSR = 2350;
+					*/
+					
+					
+					
+					
+					if (game1 == "w") {
+						totalSRadj = totalSRadj += (game1adj + game1b);
+						totalMMRadj = totalMMRadj += game1b;
+						outcome1 = "WIN"
+						}
+						
+					else if (game1 == "l") {
+						totalSRadj = totalSRadj -= (game1adj - game1b);
+						totalMMRadj = totalMMRadj += game1b;
+						outcome1 = "LOSS"
+						}
+					
+					if (game2 == "w") {
+						totalSRadj = totalSRadj += (game2adj + game2b);
+						totalMMRadj = totalMMRadj += game2b;
+						outcome2 = "WIN";
+						}
+						
+					else if (game2 == "l") {
+						totalSRadj = totalSRadj -= (game2adj - game2b);
+						totalMMRadj = totalMMRadj += game2b;
+						outcome2 = "LOSS";
+						}
+						
+					if (game3 == "w") {
+						totalSRadj = totalSRadj += (game3adj + game3b);
+						totalMMRadj = totalMMRadj += game3b;
+						outcome3 = "WIN";
+						}
+						
+					else if (game3 == "l") {
+						totalSRadj = totalSRadj -= (game3adj - game3b);
+						totalMMRadj = totalMMRadj += game3b;
+						outcome3 = "LOSS";
+						}
+						
+					if (game4 == "w") {
+						totalSRadj = totalSRadj += (game4adj + game4b);
+						totalMMRadj = totalMMRadj += game4b;
+						outcome4 = "WIN";
+						}
+						
+					else if (game4 == "l") {
+						totalSRadj = totalSRadj -= (game4adj - game4b);
+						totalMMRadj = totalMMRadj += game4b;
+						outcome4 = "LOSS";
+						}
+						
+					if (game5 == "w") {
+						totalSRadj = totalSRadj += (game5adj + game5b);
+						totalMMRadj = totalMMRadj += game5b;
+						outcome5 = "WIN";
+						}
+					else if (game5 == "l") {
+						totalSRadj = totalSRadj -= (game5adj - game5b);
+						totalMMRadj = totalMMRadj += game5b;
+						outcome5 = "LOSS";
+						}
+						
+					if (game6 == "w") {
+						totalSRadj = totalSRadj += (game6adj + game6b);
+						totalMMRadj = totalMMRadj += game6b;
+						outcome6 = "WIN";
+						}
+						
+					else if (game6 == "l") {
+						totalSRadj = totalSRadj -= (game6adj - game6b);
+						totalMMRadj = totalMMRadj += game6b;
+						outcome6 = "LOSS";
+						}
+						
+					if (game7 == "w") {
+						totalSRadj = totalSRadj += (game7adj + game7b);
+						totalMMRadj = totalMMRadj += game7b;
+						outcome7 = "WIN";
+						}
+						
+					else if (game7 == "l") {
+						totalSRadj = totalSRadj -= (game7adj - game7b);
+						totalMMRadj = totalMMRadj += game7b;
+						outcome7 = "LOSS";
+						}
+						
+					if (game8 == "w") {
+						totalSRadj = totalSRadj += (game8adj + game8b);
+						totalMMRadj = totalMMRadj += game8b;
+						outcome8 = "WIN";
+						}
+						
+					else if (game8 == "l") {
+						totalSRadj = totalSRadj -= (game8adj - game8b);
+						totalMMRadj = totalMMRadj += game8b;
+						outcome8 = "LOSS";
+						}
+						
+					if (game9 == "w") {
+						totalSRadj = totalSRadj += (game9adj + game9b);
+						totalMMRadj = totalMMRadj += game9b;
+						outcome9 = "WIN";
+						}
+						
+					else if (game9 == "l") {
+						totalSRadj = totalSRadj -= (game9adj - game9b);
+						totalMMRadj = totalMMRadj += game9b;
+						outcome9 = "LOSS";
+						}
+						
+					if (game10 == "w") {
+						totalSRadj = totalSRadj += (game10adj + game10b);
+						totalMMRadj = totalMMRadj += game10b;
+						outcome10 = "WIN";
+						}
+						
+					else if (game10 == "l") {
+						totalSRadj = totalSRadj -= (game10adj - game10b);
+						totalMMRadj = totalMMRadj += game10b;
+						outcome10 = "LOSS";
+						}
+					
+					NewSRTotal = startingSR + totalSRadj;
+					totalb = game1b + game2b + game3b + game4b + game5b + game6b + game7b + game8b + game9b;
+					
+						
+
+					document.getElementById('output').innerHTML= "SR after placements will be " + NewSRTotal + ". Total bonus SR points were " + totalb + ". New MMR is " + totalMMRadj;
+					
+					document.getElementById('game1o').innerHTML= "Match #1 " + outcome1 + " with a " + game1x + " preformance bonus multiplier";
+					document.getElementById('game2o').innerHTML= "Match #2 " + outcome2 + " with a " + game2x + " preformance bonus multiplier";
+					document.getElementById('game3o').innerHTML= "Match #3 " + outcome3 + " with a " + game3x + " preformance bonus multiplier";
+					document.getElementById('game4o').innerHTML= "Match #4 " + outcome4 + " with a " + game4x + " preformance bonus multiplier";
+					document.getElementById('game5o').innerHTML= "Match #5 " + outcome5 + " with a " + game5x + " preformance bonus multiplier";
+					document.getElementById('game6o').innerHTML= "Match #6 " + outcome6 + " with a " + game6x + " preformance bonus multiplier";
+					document.getElementById('game7o').innerHTML= "Match #7 " + outcome7 + " with a " + game7x + " preformance bonus multiplier";
+					document.getElementById('game8o').innerHTML= "Match #8 " + outcome8 + " with a " + game8x + " preformance bonus multiplier";
+					document.getElementById('game9o').innerHTML= "Match #9 " + outcome9 + " with a " + game9x + " preformance bonus multiplier";
+					document.getElementById('game10o').innerHTML= "Match #10 " + outcome10 + " with a " + game10x + " preformance bonus multiplier";
+					
+				}
+			
+			</script>
+			<br>
+			<br>
+			<div id="output"></div>
+			<br>
+			<div id="game1o"></div>	
+			<br>
+			<div id="game2o"></div>	
+			<br>
+			<div id="game3o"></div>	
+			<br>
+			<div id="game4o"></div>	
+			<br>
+			<div id="game5o"></div>	
+			<br>
+			<div id="game6o"></div>	
+			<br>
+			<div id="game7o"></div>	
+			<br>
+			<div id="game8o"></div>	
+			<br>			
+			<div id="game9o"></div>	
+			<br>
+			<div id="game10o"></div>	
+			<br>
+			<h2>This page still under construction!</h2>
+		</section>
+		<aside>
+		    <h2>Recent Gator stories:</h2>
+		    <ul>
+                <li><a href="https://www.gatorcountry.com/feature/projecting-florida-gators-depth-chart-offense/">Florida Gators Depth: Offense</a></li>
+			    <li><a href="https://247sports.com/college/florida/Article/Florida-Gators-Football-Feleipe-Franks-should-be-able-to-display-natural-talent-even-more-in-2019-for-UF-134171633/">Franks' Natural Talent</a></li>
+			    <li><a href="https://www.gatorsports.com/2019/08/floridas-carter-primed-for-player-status/">Zachary Carter: Player</a></li>
+			    <li><a href="https://www.gatorsports.com/2019/08/position-breakdown-how-offensive-line-performs-holds-a-key-to-floridas-season/">Offensive line is key</a></li>
+			    <li><a href="https://www.gainesville.com/news/20190801/uf-ranked-no-8-in-coaches-poll">Gators in Coaches top 10</a></li>
+		    </ul>
+        </aside>		
+	</main>
+	<footer>
+		<p>&copy; 2019 Gator Spot - All images and media are property of their respective owners. Gator Spot and it's members are not official spokespersons of the University of Florida. The opinions and views are that solely upon the creators.</p>
+	</footer>
+</body>
+</html>

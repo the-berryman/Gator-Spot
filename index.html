@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+
+	Final Project "Gator Spot"
+	By Gavin Berryman
+	Last edited: August 4th, 2019
+	CGS-1821 Summer 2019
+
+-->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Gator Spot | About Us </title>
+	<link rel="shortcut icon" href="../images/favicon.jpg">
+	<link rel="stylesheet" href="../styles/normalize.css">
+	<link rel="stylesheet" href="../styles/main_rwd.css">
+	<link rel="stylesheet" href="../styles/slicknav.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery.slicknav.min.js"></script>
+	<script type="text/javascript">
+    	$(document).ready(function(){
+			$('#nav_menu').slicknav({prependTo:"#mobile_menu"});
+    	});
+    </script>
+</head>
+
+<body>
+	<header>
+		<a href="index.html"><img src="../images/nav_logo.png" alt="Gators Image"></a>
+		<h2>Gator Spot</h2>
+		<h3>In depth detail on the Florida Gators football team</h3>
+	</header>  
+	<nav id="mobile_menu"></nav>
+	<nav id="nav_menu">
+  	<ul>
+    	<li><a href="../index.html" >Home</a></li>
+    	<li><a href="../roster/index.html">Roster</a>
+    		<ul>
+    			<li><a href="../roster/index.html">Coaches</a></li>
+    			<li><a href="../roster/offense.html">Offense</a></li>
+    			<li><a href="../roster/defense.html">Defense</a></li>
+    			
+    		</ul>
+    	<li><a href="../opponents/index.html">Opponents</a></li>
+    	<li><a href="../recruiting/index.html">Recruiting</a></li>
+    	
+    	</li>
+    	<li><a href="../about/index.html" class="current">About Us</a></li>
+	</ul>
+    </nav>
+	<main>
+        <section>
+        	<img src="../images/gavin.png" alt="Gavin" class="gavin">
+        	<h2>About us</h2>
+
+        	<p>Gator Spot was founded by Gavin Berryman, a long time Florida Gators football fan. He grew up less than a mile away from the swamp, so hearing the stadium ignite on Saturdays during the Steve Spurrier days was inspirational. Gavin currently works for the University in the Information Technology department, one of UF's biggest entities. He strives to make the Gator community a better place, as well as share a passion for Gator football.
+			
+        	</p>
+
+        	
+
+        	<h2> Support the creators</h2>
+        	<p>We need you to help us keep Gator Spot ad-free. We accept and appreciate donations to help keep your favorite Gator football site running. Please fill out the form to donate today!</p>
+
+           <h2>Order Form</h2>
+           <p>
+    		<form action="donate_submission.html" method="get"
+        		name="donate_submission" id="donate_submission">
+				
+				
+    			<fieldset>
+        			<legend>Donor Information</legend>
+					<label for="email">E-Mail:</label>
+					<input type="text" name="email" id="email" placeholder=" gator@email.com" required><br>
+        			<label for="first_name">First Name:</label>
+					<input type="text" name="first_name" id="first_name" placeholder=" Albert" required><br>
+					<label for="last_name">Last Name:</label>
+					<input type="text" name="last_name" id="last_name" placeholder=" Gator" required><br>
+					<label for="address">Address:</label>
+					<input type="text" name="address" id="address"><br>
+					<label for="city">City:</label>
+					<input type="text" name="city" id="city" required><br>
+					<label for="state">State:</label>
+					<input type="text" name="state" id="state" required maxlength="2" placeholder=" 2-character code"><br>
+					<label for="zip">ZIP Code:</label>
+					<input type="text" name="zip" id="zip" required placeholder=" 5 or 9 digits" 
+				           pattern="^\d{5}(-\d{4})?$" title="Either 5 or 9 digits">
+				           <br>
+					<label for="phone">Phone Number:</label>
+					<input type="tel" name="phone" id="phone" placeholder="123-456-5555" 
+				       	   pattern="\d{3}[\-]\d{3}[\-]\d{4}" title="Must be 123-456-5555 format"><br>
+				   
+				    
+				</fieldset>
+				
+				
+				
+				<fieldset>
+					<legend id="buttons">Payment Method</legend>
+					<label class="radio">&nbsp;</label>
+					<input type="radio" name="payment_method" class="radio" id="paypal" value="Paypal">
+					<label for="bill_me" class="radio">Paypal</label>
+					<input type="radio" name="payment_method" class="radio" id="credit_card" value="Credit Card">
+					<label for="credit_card" class="radio">Credit Card</label><br>
+				</fieldset>
+				
+				
+				<fieldset>
+					<legend>Credit Card Information</legend>
+					<label for="card_type">Card Type:</label>
+					<select name="card_type" id="card_type">
+						<option style="color:gray" value="none">Select one</option>
+				    	<option value="visa">Visa</option>
+				    	<option value="mastercard">MasterCard</option>            
+				    	<option value="dicsover">Discover</option>
+					</select><br>
+					<label for="card_number">Card Number:</label>
+					<input type="text" name="card_number" id="card_number" placeholder=" 16 digits" pattern="\d{16}" title="Must be 16 digits"><br>
+					<label for="expiration_month">Expiration date:</label>
+					<select name="expiration_month" id="expiration_month">
+						<option style="color:gray" value="none">Month</option>
+				    	<option value="1">January</option>
+				    	<option value="2">February</option>            
+				    	<option value="3">March</option>
+						<option value="4">April</option>
+				    	<option value="5">May</option>            
+				    	<option value="6">June</option>
+						<option value="7">July</option>
+				    	<option value="8">August</option>            
+				    	<option value="9">September</option>
+						<option value="10">October</option>
+				    	<option value="11">November</option>            
+				    	<option value="12">December</option>
+					</select>
+					<select name="expiration_year" id="expiration_year">
+						<option style="color:gray" value="none">Year</option>
+						<option value="2017">2019</option>
+						<option value="2018">2020</option>
+						<option value="2019">2021</option>
+						<option value="2020">2022</option>
+						<option value="2021">2023</option>
+					</select><br>
+				</fieldset>
+
+				<fieldset>
+					<legend>Comments</legend>
+					<p>Give us some feedback or comments for this donation!</p><br>
+					<textarea id="comments"></textarea>
+				</fieldset>
+				
+				<p>
+					
+					
+				</p>
+				<fieldset id="buttons">
+					<legend>Submit Your Order</legend>
+					<label class="submit"></label>
+					<input type="submit" id="submit" class="submit" value="Submit">
+					<input type="reset" id="reset" class="submit" value="Reset Fields"><br>
+				</fieldset>
+				
+				
+			</form>
+		</p>
+		</section>
+		<aside>
+		    <h2>Recent Gator stories:</h2>
+		    <ul>
+                <li><a href="https://www.gatorcountry.com/feature/projecting-florida-gators-depth-chart-offense/">Florida Gators Depth: Offense</a></li>
+			    <li><a href="https://247sports.com/college/florida/Article/Florida-Gators-Football-Feleipe-Franks-should-be-able-to-display-natural-talent-even-more-in-2019-for-UF-134171633/">Franks' Natural Talent</a></li>
+			    <li><a href="https://www.gatorsports.com/2019/08/floridas-carter-primed-for-player-status/">Zachary Carter: Player</a></li>
+			    <li><a href="https://www.gatorsports.com/2019/08/position-breakdown-how-offensive-line-performs-holds-a-key-to-floridas-season/">Offensive line is key</a></li>
+			    <li><a href="https://www.gainesville.com/news/20190801/uf-ranked-no-8-in-coaches-poll">Gators in Coaches top 10</a></li>
+		    </ul>
+        </aside>		
+	</main>
+	<footer>
+			<p>&copy; 2019 Gator Spot - All images and media are property of their respective owners. Gator Spot and it's members are not official spokespersons of the University of Florida. The opinions and views are that solely upon the creators.</p>
+	</footer>
+</body>
+</html>
